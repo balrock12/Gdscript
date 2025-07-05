@@ -1,0 +1,30 @@
+extends CharacterBody2D
+
+#Public ii code 
+#Errors in the code will immediately cause a crash
+#Variables in the code caused an error message
+@export var speed: = 100
+@export var gravity: = 5
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	atacc_cls()
+	if Input.is_action_pressed("w"):
+		velocity.y -= speed * delta
+	if Input.is_action_pressed("s"):
+		velocity.y += speed * delta
+	if Input.is_action_pressed("a"):
+		velocity.x -= speed * delta
+	if Input.is_action_pressed("d"):
+		velocity.x += speed * delta
+	move_and_slide()
+
+func atacc_cls():
+	pass
